@@ -1,0 +1,617 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mind Matters | Mental Health Guide</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --navy: #293b50;
+  --blue: #66869b;
+  --yellow: #f4d77e;
+  --cream: #fffaf0;
+  --lavender: #e9e4f2;
+  --lightblue: #e8f0f5;
+  --text: #455468;
+  --white: #ffffff;
+}
+
+body {
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  background: #fcfbf8;
+  color: var(--text);
+  line-height: 1.7;
+}
+
+/* NAVIGATION */
+
+header {
+  background: rgba(255,255,255,0.96);
+  border-bottom: 1px solid #e9e8e4;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  max-width: 1150px;
+  margin: auto;
+  padding: 17px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  color: var(--navy);
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #b9943f;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 18px;
+  font-size: 14px;
+  transition: .3s;
+}
+
+nav a:hover {
+  color: #b9943f;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 520px;
+  background: linear-gradient(115deg, #e8f0f5 0%, #f0eaf5 55%, #fff3ce 100%);
+  display: flex;
+  align-items: center;
+  padding: 70px 9%;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border: 2px solid rgba(255,255,255,.65);
+  border-radius: 50%;
+  right: -90px;
+  top: -100px;
+}
+
+.hero-content {
+  max-width: 760px;
+  position: relative;
+  z-index: 1;
+}
+
+.tag {
+  color: #71869a;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  color: var(--navy);
+  font-size: clamp(42px, 6vw, 68px);
+  line-height: 1.12;
+  margin: 20px 0;
+}
+
+.hero h1 span {
+  color: #b9943f;
+}
+
+.hero p {
+  max-width: 600px;
+  font-size: 17px;
+  margin-bottom: 25px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--navy);
+  color: white;
+  padding: 13px 26px;
+  text-decoration: none;
+  border-radius: 7px;
+  font-size: 14px;
+  transition: .3s;
+}
+
+.button:hover {
+  background: #526e83;
+  transform: translateY(-2px);
+}
+
+/* GENERAL SECTIONS */
+
+section {
+  padding: 85px 9%;
+  scroll-margin-top: 75px;
+}
+
+.section-label {
+  text-align: center;
+  color: #b9943f;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+section h2 {
+  color: var(--navy);
+  text-align: center;
+  font-size: 34px;
+  margin: 8px 0 15px;
+}
+
+.description {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  color: #697789;
+}
+
+/* CARDS */
+
+.cards {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 13px;
+  border: 1px solid #e8e8e5;
+  box-shadow: 0 7px 22px rgba(40,55,75,.045);
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(40,55,75,.09);
+}
+
+.card-number {
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: #b9943f;
+  font-weight: bold;
+  margin-bottom: 14px;
+}
+
+.card h3 {
+  color: var(--navy);
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #697789;
+  font-size: 14px;
+}
+
+.card.blue {
+  border-top: 4px solid #9dbdce;
+}
+
+.card.yellow {
+  border-top: 4px solid #e8cf85;
+}
+
+.card.purple {
+  border-top: 4px solid #bdb0d6;
+}
+
+.card.green {
+  border-top: 4px solid #a9c8b0;
+}
+
+/* HIGHLIGHT */
+
+.highlight {
+  background: var(--lightblue);
+}
+
+.quote {
+  max-width: 850px;
+  margin: auto;
+  padding: 48px 35px;
+  text-align: center;
+  background: white;
+  border-radius: 14px;
+  border-left: 5px solid var(--yellow);
+}
+
+.quote p {
+  font-size: 23px;
+  color: var(--navy);
+  font-weight: bold;
+}
+
+.quote span {
+  display: block;
+  margin-top: 12px;
+  color: #8a929c;
+  font-size: 13px;
+}
+
+/* SUPPORT */
+
+.support-box {
+  max-width: 850px;
+  margin: auto;
+  background: var(--cream);
+  border: 1px solid #f0e7cf;
+  border-radius: 14px;
+  padding: 35px;
+}
+
+.support-box h3 {
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--navy);
+  color: white;
+  padding: 45px 9%;
+  text-align: center;
+}
+
+footer h2 {
+  font-size: 25px;
+  margin-bottom: 10px;
+}
+
+footer p {
+  color: #d4dce4;
+  font-size: 13px;
+  margin: 5px;
+}
+
+.footer-line {
+  width: 55px;
+  height: 3px;
+  background: var(--yellow);
+  margin: 20px auto;
+}
+
+/* MOBILE */
+
+@media(max-width: 700px) {
+  nav {
+    justify-content: center;
+  }
+
+  nav a {
+    margin: 5px 8px;
+  }
+
+  .hero {
+    padding: 65px 8%;
+  }
+
+  section {
+    padding: 65px 7%;
+  }
+
+  section h2 {
+    font-size: 28px;
+  }
+
+  .quote p {
+    font-size: 19px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+  <div class="logo">MIND<span>MATTERS.</span></div>
+
+  <div>
+    <a href="#about">About</a>
+    <a href="#stress">Stress</a>
+    <a href="#selfesteem">Self-esteem</a>
+    <a href="#habits">Healthy Habits</a>
+    <a href="#support">Support</a>
+  </div>
+</nav>
+</header>
+
+<!-- HOME -->
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="tag">A STUDENT'S GUIDE TO MENTAL HEALTH</div>
+
+    <h1>Your mind deserves <span>care</span>, too.</h1>
+
+    <p>
+      Being a teenager comes with different challenges.
+      Academic pressure, social expectations and personal
+      changes can sometimes feel overwhelming. This guide
+      is here to help you understand your emotions and
+      discover simple ways to take care of yourself.
+    </p>
+
+    <a href="#about" class="button">DISCOVER THE GUIDE</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+
+<section id="about">
+  <div class="section-label">01 — UNDERSTANDING YOURSELF</div>
+  <h2>What Is Mental Health?</h2>
+
+  <p class="description">
+    Mental health is an important part of our overall well-being.
+    It influences how we think, feel, face challenges, make decisions
+    and interact with other people.
+  </p>
+
+  <div class="cards">
+
+    <div class="card blue">
+      <div class="card-number">01 / AWARENESS</div>
+      <h3>Understand Your Emotions</h3>
+      <p>
+        Learning to recognize your emotions can help you
+        understand what you need. Every emotion is valid,
+        even the difficult ones.
+      </p>
+    </div>
+
+    <div class="card purple">
+      <div class="card-number">02 / EXPRESSION</div>
+      <h3>Express Yourself</h3>
+      <p>
+        Talking about your thoughts and feelings with someone
+        you trust can help you feel heard and supported.
+      </p>
+    </div>
+
+    <div class="card yellow">
+      <div class="card-number">03 / ACCEPTANCE</div>
+      <h3>Accept Your Feelings</h3>
+      <p>
+        You do not have to pretend to be happy all the time.
+        Difficult days are part of life, and your feelings matter.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- STRESS -->
+
+<section id="stress" class="highlight">
+  <div class="section-label">02 — EVERYDAY CHALLENGES</div>
+  <h2>Managing Stress</h2>
+
+  <p class="description">
+    School responsibilities, exams and personal expectations
+    can create stress. These small strategies may help you
+    manage challenging situations.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-number">TIP 01</div>
+      <h3>Organize Your Time</h3>
+      <p>
+        Create a realistic schedule and divide large assignments
+        into smaller tasks. Start with one thing at a time.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-number">TIP 02</div>
+      <h3>Take Breaks</h3>
+      <p>
+        Give yourself time to rest between activities.
+        Short breaks can help you return to your work with
+        a clearer mind.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-number">TIP 03</div>
+      <h3>Set Realistic Goals</h3>
+      <p>
+        You do not need to do everything perfectly.
+        Focus on achievable goals and recognize your progress.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-number">TIP 04</div>
+      <h3>Talk to Someone</h3>
+      <p>
+        Sharing your concerns with a trusted person can help
+        you feel less alone when things become difficult.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SELF ESTEEM -->
+
+<section id="selfesteem">
+  <div class="section-label">03 — PERSONAL GROWTH</div>
+  <h2>Building Self-Esteem</h2>
+
+  <p class="description">
+    Self-esteem is connected to how we see and value ourselves.
+    Developing a positive relationship with yourself takes time,
+    patience and practice.
+  </p>
+
+  <div class="cards">
+
+    <div class="card yellow">
+      <div class="card-number">01</div>
+      <h3>Stop Comparing Yourself</h3>
+      <p>
+        Everyone has a different journey. Focus on your own
+        experiences instead of comparing your life with others.
+      </p>
+    </div>
+
+    <div class="card blue">
+      <div class="card-number">02</div>
+      <h3>Recognize Your Strengths</h3>
+      <p>
+        Remember your achievements, interests and abilities.
+        Small accomplishments deserve recognition, too.
+      </p>
+    </div>
+
+    <div class="card purple">
+      <div class="card-number">03</div>
+      <h3>Learn From Mistakes</h3>
+      <p>
+        Making mistakes is part of learning. They do not
+        determine your worth or define who you are.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- HEALTHY HABITS -->
+
+<section id="habits" class="highlight">
+  <div class="section-label">04 — DAILY WELL-BEING</div>
+  <h2>Healthy Habits</h2>
+
+  <p class="description">
+    Taking care of your mental health also means creating
+    everyday habits that support your general well-being.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <div class="card-number">REST</div>
+      <h3>Prioritize Sleep</h3>
+      <p>
+        Try to maintain a regular sleep routine and give
+        yourself enough time to relax before bedtime.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-number">INTERESTS</div>
+      <h3>Enjoy Your Hobbies</h3>
+      <p>
+        Make time for activities you enjoy, such as reading,
+        drawing, listening to music or spending time outdoors.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-number">CONNECTION</div>
+      <h3>Stay Connected</h3>
+      <p>
+        Build supportive relationships with friends,
+        family members and people who respect you.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- SUPPORT -->
+
+<section id="support">
+  <div class="section-label">05 — YOU ARE NOT ALONE</div>
+  <h2>Asking for Help Is Okay</h2>
+
+  <p class="description">
+    Sometimes, taking care of yourself means recognizing
+    when you need support from someone else.
+  </p>
+
+  <div class="support-box">
+    <h3>Who Can You Talk To?</h3>
+
+    <p>
+      If your emotions or problems become difficult to manage,
+      consider talking to a trusted adult, family member,
+      teacher, school counselor or qualified mental health
+      professional. You deserve to be listened to and supported.
+    </p>
+
+    <br>
+
+    <p>
+      Remember: asking for help is not a weakness.
+      It is a positive step towards taking care of yourself.
+    </p>
+  </div>
+</section>
+
+<!-- FINAL MESSAGE -->
+
+<section class="highlight">
+  <div class="quote">
+    <p>
+      "You do not have to be okay every single day.
+      Give yourself the same care and understanding
+      you would give to someone else."
+    </p>
+    <span>MIND MATTERS — YOUR WELL-BEING COUNTS</span>
+  </div>
+</section>
+
+<footer>
+  <h2>MIND MATTERS.</h2>
+  <div class="footer-line"></div>
+  <p>A student project promoting mental health awareness.</p>
+  <p>Be kind to yourself. Be kind to others.</p>
+  <p style="margin-top:20px;font-size:11px;">
+    This website is an educational resource and does not replace
+    professional mental health support.
+  </p>
+</footer>
+
+</body>
+</html>
